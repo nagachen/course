@@ -1,5 +1,5 @@
 
-    .query_student, .add_student, .update_student{
+    .query_student, .add_student, .update_student,.del_student{
         border: 1px solid 1px;
         margin:0 auto;
         margin-top: 30px;

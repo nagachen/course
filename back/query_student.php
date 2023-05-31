@@ -32,12 +32,12 @@ $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
             <td><?= $row['pw'] ?></td>
             <td>
                 <!-- 收到編輯和刪除的訊息才顯示, 權限為帳號等級 -->
-            <form action="?do=update_student" method="post" target="_self">
-                <input type="hidden" name="<?=$row['id']?>">
+            <form action="?do=update_student" method="post" >
+                <input type="hidden" name='id' value="<?=$row['id']?>">
                 <button type='submit' >編輯</button>
             </form>
-            <form action="?do=del_student" method="post" target="_self">
-                <input type="hidden" name="<?=$row['id']?>">
+            <form action="?do=del_student" method="post" >
+                <input type="hidden" name='id' value="<?=$row['id']?>">
                 <button type='submit' >刪除</button>
             </form>
 
