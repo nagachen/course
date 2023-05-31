@@ -18,13 +18,14 @@ if(isset($_GET['do'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    
 </head>
 <body>
     <?php
     
     include_once "header.php";
     include "./back/$do.php";
-
+    
     ?>
 </body>
 </html>

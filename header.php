@@ -29,6 +29,7 @@
     .dropDownMenu ul {
         /*隱藏次選單*/
         display: none;
+        
     }
 
     .dropDownMenu li:hover>ul {
@@ -59,11 +60,14 @@
 
     .dropDownMenu ul {
         border: #ccc 2px solid;
-
+        /* z-index: 99; */
+        position: absolute;
     }
 
     .dropDownMenu ul li {
         border-bottom: #ccc 2px solid;
+        background-color: lightgreen;
+        /* z-index: 999; */
     }
 </style>
 

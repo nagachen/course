@@ -9,6 +9,8 @@ $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 <style>
     .std-table {
         border: 1px solid 1px;
+        margin: auto;
+        margin-top: 30px;
     }
 </style>
 <table class="std-table">
@@ -34,8 +36,15 @@ $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
             <td><?= $row['pw'] ?></td>
             <td>
                 <!-- 收到編輯和刪除的訊息才顯示, 權限為帳號等級 -->
-                <button type='button' >編輯</button>
-                <button type='button' >刪除</button>
+            <form action="?do=update_student" method="post" target="_self">
+                <input type="hidden" name="<?=$row['id']?>">
+                <button type='submit' >編輯</button>
+            </form>
+            <form action="?do=del_student" method="post" target="_self">
+                <input type="hidden" name="<?=$row['id']?>">
+                <button type='submit' >刪除</button>
+            </form>
+
             </td>
         </tr>
     <?php
