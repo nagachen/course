@@ -89,7 +89,7 @@
                 <li><a href="./backend.php?do=add_student">新增學生資料</a></li>
                 <li><a href="./backend.php?do=query_student">查詢學生資料</a></li>
                 <li><a href="./backend.php?do=update_student">更新學生資料</a></li>
-                <li><a href="">查詢學生資料</a></li>
+                <li><a href="./backend.php?do=del_student">刪除學生資料</a></li>
             </ul>
         </li>
         <li><a href="">課程相關</a>

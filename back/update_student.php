@@ -2,9 +2,9 @@
 
 
 
+<div class="update_student">
+    <h1> 編輯學生 </h1>
 
-<h1> 編輯學生 </h1>
-    
     <form action="../api/add_student.php" method="post">
         <div class="stdNumber">
             <label for="std_num">學號:</label>
@@ -26,12 +26,14 @@
         <div class="stdAcc">
             <label for="std_acc">帳號:</label>
             <input type="text" name="std_acc" id="std_acc">
-        </div> <div class="stdPw">
+        </div>
+        <div class="stdPw">
             <label for="std_pw">密碼:</label>
             <input type="text" name="std_pw" id="std_pw">
         </div>
-        <div >
-            <input type="submit" value="送出">                  
+        <div>
+            <input type="submit" value="送出">
             <input type="reset" value="重置">
         </div>
     </form>
+</div>

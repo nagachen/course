@@ -1,19 +1,15 @@
 <!-- 學生查詢後台 -->
 
 <!-- 現有資料列表 -->
+
+
 <?php
 
 $sql = "select * from `student`";
 $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 ?>
-<style>
-    .std-table {
-        border: 1px solid 1px;
-        margin: auto;
-        margin-top: 30px;
-    }
-</style>
-<table class="std-table">
+
+<table class="query_student">
     <tr>
         <td>id</td>
         <td>學號</td>
