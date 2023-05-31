@@ -32,6 +32,11 @@ $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
             <td><?= $row['course'] ?></td>
             <td><?= $row['acc'] ?></td>
             <td><?= $row['pw'] ?></td>
+            <td>
+                <!-- 收到編輯和刪除的訊息才顯示, 權限為帳號等級 -->
+                <button type='button' >編輯</button>
+                <button type='button' >刪除</button>
+            </td>
         </tr>
     <?php
     }

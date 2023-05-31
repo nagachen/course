@@ -53,7 +53,6 @@
 
     }
 
-
     .dropDownMenu ul li:last-child {
         border-bottom: none;
     }
@@ -85,7 +84,7 @@
             <ul>
                 <li><a href="./backend.php?do=add_student">新增學生資料</a></li>
                 <li><a href="./backend.php?do=query_student">查詢學生資料</a></li>
-                <li><a href="">更新學生資料</a></li>
+                <li><a href="./backend.php?do=update_student">更新學生資料</a></li>
                 <li><a href="">查詢學生資料</a></li>
             </ul>
         </li>

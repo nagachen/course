@@ -23,7 +23,7 @@ if(isset($_GET['do'])){
     <?php
     
     include_once "header.php";
-    include "./back/query_student.php";
+    include "./back/$do.php";
 
     ?>
 </body>
