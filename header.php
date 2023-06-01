@@ -98,9 +98,9 @@
         </li>
         <li>
         <?php if(isset($_SESSION['login'])){
-            echo "<a href='?do=logout.php'>登出</a>";
+            echo "<a href='api/logout.php'>登出</a>";
         }else{
-            echo "<a href='?do=login.php'>登入</a>";
+            echo "<a href='?do=login'>登入</a>";
         }    
        
             ?>
