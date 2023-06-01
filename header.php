@@ -19,11 +19,13 @@
         font-size: 20px;
         justify-content: space-around;
         margin: auto;
+        
 
     }
 
     .dropDownMenu>li>ul li {
         font-size: 14px;
+        
     }
 
     .dropDownMenu ul {
@@ -51,6 +53,7 @@
         text-decoration: none;
         line-height: 40px;
         /* white-space: nowrap; */
+        background-color: rgb(255,255,255,0);
 
     }
 
@@ -60,14 +63,14 @@
 
     .dropDownMenu ul {
         border: #ccc 2px solid;
-        /* z-index: 99; */
+        
         position: absolute;
     }
 
     .dropDownMenu ul li {
         border-bottom: #ccc 2px solid;
         background-color: lightgreen;
-        /* z-index: 999; */
+        
     }
 </style>
 

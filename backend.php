@@ -29,6 +29,7 @@ if(isset($_GET['do'])){
     <?php
     
     include_once "header.php";
+    include "./front/login.php";
     include "./back/$do.php";
     
     ?>
