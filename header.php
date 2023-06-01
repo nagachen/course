@@ -79,14 +79,15 @@
 
     <ul class="dropDownMenu">
         <li><a href="index.php">網站首頁</a></li>
-        <li><a href="">老師資料</a>
+        <li><a href="">課程相關</a>
             <ul>
-                <li><a href="">新增老師資料</a></li>
-                <li><a href="">查詢老師資料</a></li>
-                <li><a href="">更新老師資料</a></li>
-                <li><a href="">查詢老師資料</a></li>
+                <li><a href="">新增課程資料</a></li>
+                <li><a href="">查詢課程資料</a></li>
+                <li><a href="">更新課程資料</a></li>
+                <li><a href="">查詢課程資料</a></li>
             </ul>
         </li>
+        
         <li><a href="">學生資料</a>
             <ul>
                 <li><a href="./backend.php?do=add_student">新增學生資料</a></li>
@@ -95,13 +96,14 @@
                 <li><a href="./backend.php?do=del_student">刪除學生資料</a></li>
             </ul>
         </li>
-        <li><a href="">課程相關</a>
-            <ul>
-                <li><a href="">新增課程資料</a></li>
-                <li><a href="">查詢課程資料</a></li>
-                <li><a href="">更新課程資料</a></li>
-                <li><a href="">查詢課程資料</a></li>
-            </ul>
+        <li>
+        <?php if(isset($_SESSION['login'])){
+            echo "<a href='?do=logout.php'>登出</a>";
+        }else{
+            echo "<a href='?do=login.php'>登入</a>";
+        }    
+       
+            ?>
         </li>
     </ul>
 </header>

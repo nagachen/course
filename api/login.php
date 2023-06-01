@@ -13,10 +13,17 @@ if($chk){         //驗證是否成功？
                        && `pw` = '{$_POST['pw']}'")->fetch(PDO::FETCH_ASSOC);
     $_SESSION['power']=$power;
     $_SESSION['login']=$_POST['acc'];
+    unset($_SESSION['error']);
+    //記錄登入後所留下的痕跡,預計寫入login
+    $_SESSION['history']="使用者:{$_POST['acc']}於". date('Y-m-d'). "登入成功";
+
     // echo"登入成功";
        header("location:?do=sucess");
+       exit();//登入成功也會執行下面
+       
 }else{
-       header("location:?do=error");
+       
+    header("location:../backend.php?do=error&error=1");
 }
 
 
