@@ -1,32 +1,36 @@
-<!-- 後台新增學生 -->
+<!-- 後台新增學生或員工 -->
 
 <div class="add_student">
-    <h1> 新增學生 </h1>
+    <h1> 新增學生或員工 </h1>
     <form action="./api/add_student.php" method="post">
         <div>
-            <label for="std_num">學號:</label>
-            <input type="text" name="std_num" >
+            <label for="number">學號或員工號:</label>
+            <input type="text" name="number" >
         </div>
         <div>
-            <label for="std_name">姓名:</label>
-            <input type="text" name="std_name" >
+            <label for="name">姓名:</label>
+            <input type="text" name="name" >
         </div>
         <div>
-            <label for="std_email">電子郵件:</label>
-            <input type="text" name="std_email" >
+            <label for="email">電子郵件:</label>
+            <input type="text" name="email" >
         </div>
         <div>
-            <label for="std_course">選課科目</label>
+            <label for="course">選(開課)科目</label>
             <!-- 先用輸入的，之後再用選的 -->
-            <input type="text" name="std_course" >
+            <input type="text" name="course" >
         </div>
         <div>
-            <label for="std_acc">帳號:</label>
-            <input type="text" name="std_acc" >
+            <label for="acc">帳號:</label>
+            <input type="text" name="acc" >
         </div>
         <div>
-            <label for="std_pw">密碼:</label>
-            <input type="text" name="std_pw" >
+            <label for="pw">密碼:</label>
+            <input type="text" name="pw" >
+        </div>
+        <div>
+            <label for="power">身份:</label>
+            <input type="text" name="power" >
         </div>
         <div>
             <input type="submit" value="送出">

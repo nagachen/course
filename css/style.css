@@ -1,10 +1,18 @@
 
-    .query_student, .add_student, .update_student,.del_student{
-        border: 1px solid 1px;
+    .query_student, .add_student, .update_student,.del_student,.login{
+        border: 1px solid black;
         margin:0 auto;
         margin-top: 30px;
         width: 70%;
         /* background-color: aqua; */
         text-align: center;
     }
-
+    .login{
+        background-color: aqua;
+        height: 15vh;
+        width: 20%;
+        margin-top: 100px;
+    }
+    .login>div:nth-child(1){
+        margin-top: 15px;
+    }

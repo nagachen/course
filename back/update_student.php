@@ -1,4 +1,4 @@
-<!-- 後台編輯學生 -->
+<!-- 後台編輯學生或員資料 -->
 <?php
 
    
@@ -14,33 +14,37 @@ $row=$pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
 
 
 <div class="update_student">
-    <h1> 編輯學生 </h1>
+    <h1> 修改學生或員工資料 </h1>
    
     <form action="./api/update_student.php" method="post">
         <div >
-            <label for="std_num">學號:</label>
-            <input type="text" name="std_num" value="<?=$row['student_num'];?>">
+            <label for="number">學號或員工號:</label>
+            <input type="text" name="number" value="<?=$row['number'];?>">
         </div>
         <div >
-            <label for="std_name">姓名:</label>
-            <input type="text" name="std_name" value="<?=$row['name'];?>">
+            <label for="name">姓名:</label>
+            <input type="text" name="name" value="<?=$row['name'];?>">
         </div>
         <div >
-            <label for="std_email">電子郵件:</label>
-            <input type="text" name="std_email" value="<?=$row['email'];?>">
+            <label for="email">電子郵件:</label>
+            <input type="text" name="email" value="<?=$row['email'];?>">
         </div>
         <div >
-            <label for="std_course">選課科目</label>
+            <label for="course">(選/開)課科目</label>
             <!-- 先用輸入的，之後再用選的 -->
-            <input type="text" name="std_course" value="<?=$row['course'];?>">
+            <input type="text" name="course" value="<?=$row['course'];?>">
         </div>
         <div >
-            <label for="std_acc">帳號:</label>
-            <input type="text" name="std_acc" value="<?=$row['acc'];?>">
+            <label for="acc">帳號:</label>
+            <input type="text" name="acc" value="<?=$row['acc'];?>">
         </div>
         <div >
-            <label for="std_pw">密碼:</label>
-            <input type="text" name="std_pw" value="<?=$row['pw'];?>">
+            <label for="pw">密碼:</label>
+            <input type="text" name="pw" value="<?=$row['pw'];?>">
+        </div>
+        <div >
+            <label for="power">身份:</label>
+            <input type="text" name="power" value="<?=$row['power'];?>">
         </div>
         <div>
         <input type="hidden" name='id' value="<?=$row['id']?>">

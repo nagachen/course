@@ -6,13 +6,15 @@ echo "<pre>";
 print_r($_POST);
 echo "</pre>";
     
-$sql="UPDATE `student` SET  `student_num`='{$_POST['std_num']}', 
-                            `name`='{$_POST['std_name']}',
-                            `email`='{$_POST['std_email']}',
-                            `course`='{$_POST['std_course']}',
-                            `acc`='{$_POST['std_acc']}',
-                            `pw`='{$_POST['std_pw']}' where `id` = '{$_POST['id']}'";
+$sql="UPDATE `student` SET  `number`='{$_POST['number']}', 
+                            `name`='{$_POST['name']}',
+                            `email`='{$_POST['email']}',
+                            `course`='{$_POST['course']}',
+                            `acc`='{$_POST['acc']}',
+                            `pw`='{$_POST['pw']}', 
+                            `power`='{$_POST['power']}'
+                            where `id` = '{$_POST['id']}'";
 
 $pdo->exec($sql);
-// header("location:../backend.php");
+header("location:../backend.php");
 ?>
