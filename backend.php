@@ -24,16 +24,16 @@ include_once "header.php";
     //需登入才可以用選單
     //沒有登入只能看一些無關緊要的資訊呈現
     // 登入後同時將進行身份驗證，使用session,並展現可以操作的相關資訊(一連串的驗證)
+   
     if (isset($_SESSION['login'])) {
         $do = '';
-        if (isset($_GET['do'])) {
-            $do = $_GET['do'];
+        if (isset($_SESSION['do'])) {
+            $do = $_SESSION['do'];
         } else {
             $do = "error";
         }
         include "./back/$do.php";
     }else{
-        
         include "./front/login.php";
     }
         

@@ -84,7 +84,7 @@
                 <li><a href="">新增課程資料</a></li>
                 <li><a href="">查詢課程資料</a></li>
                 <li><a href="">更新課程資料</a></li>
-                <li><a href="">查詢課程資料</a></li>
+                <li><a href="">刪除課程資料</a></li>
             </ul>
         </li>
         
@@ -98,7 +98,8 @@
         </li>
         <li>
         <?php if(isset($_SESSION['login'])){
-            echo "<a href='api/logout.php'>登出</a>";
+            echo "<a href='./api/logout.php'>登出</a>";
+            echo "  ".$_SESSION['login'] . " 你好!!";
         }else{
             echo "<a href='?do=login'>登入</a>";
         }    
