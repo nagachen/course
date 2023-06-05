@@ -81,19 +81,19 @@
         <li><a href="index.php">網站首頁</a></li>
         <li><a href="">課程相關</a>
             <ul>
-                <li><a href="">新增課程資料</a></li>
-                <li><a href="">查詢課程資料</a></li>
-                <li><a href="">更新課程資料</a></li>
-                <li><a href="">刪除課程資料</a></li>
+            <li><a href="./backend.php?do=add_class">新增課程資料</a></li>
+                <li><a href="./backend.php?do=query_class">查詢課程資料</a></li>
+                <li><a href="./backend.php?do=update_class">更新課程資料</a></li>
+                <li><a href="./backend.php?do=del_class">刪除課程資料</a></li>
             </ul>
         </li>
         
         <li><a href="">學生資料</a>
             <ul>
-                <li><a href="./backend.php?do=add_student">新增學生資料</a></li>
-                <li><a href="./backend.php?do=query_student">查詢學生資料</a></li>
-                <li><a href="./backend.php?do=update_student">更新學生資料</a></li>
-                <li><a href="./backend.php?do=del_student">刪除學生資料</a></li>
+                <li><a href="./backend.php?do=add_student">新增學生或老師資料</a></li>
+                <li><a href="./backend.php?do=query_student">查詢學生或老師資料</a></li>
+                <li><a href="./backend.php?do=update_student">更新學生或老師資料</a></li>
+                <li><a href="./backend.php?do=del_student">刪除學生或老師資料</a></li>
             </ul>
         </li>
         <li>

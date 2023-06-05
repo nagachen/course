@@ -10,6 +10,7 @@ $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <table class="query_student">
+    <h1>學生或員工查詢</h1>
     <tr>
         <td>id</td>
         <td>學號或員工號</td>
