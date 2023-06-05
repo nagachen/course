@@ -2,9 +2,6 @@
 <!-- 編輯學生api -->
 <?php
 include_once "../db.php";
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
     
 $sql="UPDATE `student` SET  `number`='{$_POST['number']}', 
                             `name`='{$_POST['name']}',
