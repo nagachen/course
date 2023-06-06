@@ -30,7 +30,6 @@ $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
             <td><?= $row['number'] ?></td>
             <td><?= $row['name'] ?></td>
             <td><?= $row['email'] ?></td>
-            <td><?= $row['course'] ?></td>
             <td><?= $row['acc'] ?></td>
             <td><?= $row['pw'] ?></td>
             <td><?= $row['power'] ?></td>

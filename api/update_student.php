@@ -6,7 +6,6 @@ include_once "../db.php";
 $sql="UPDATE `student` SET  `number`='{$_POST['number']}', 
                             `name`='{$_POST['name']}',
                             `email`='{$_POST['email']}',
-                            `course`='{$_POST['course']}',
                             `acc`='{$_POST['acc']}',
                             `pw`='{$_POST['pw']}', 
                             `power`='{$_POST['power']}'

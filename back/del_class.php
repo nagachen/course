@@ -27,11 +27,6 @@ $row=$pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
             <input type="text" name="create_id" value="<?=$row['create_id'];?>">
         </div>
         <div >
-            <label for="select_id">選課學生:</label>
-            <!-- 先用輸入的，之後再用選的 -->
-            <input type="text" name="select_id" value="<?=$row['select_id'];?>">
-        </div>
-        <div >
             <label for="start_time">開始時間:</label>
             <input type="date" name="start_time" value="<?=$row['start_time'];?>">
         </div>

@@ -16,7 +16,6 @@ $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
         <td>課程名稱</td>
         <td>課程代號</td>
         <td>開課老師</td>
-        <td>選課學生</td>
         <td>開始時間</td>
         <td>結束時間</td>
         
@@ -29,7 +28,6 @@ $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
             <td><?= $row['subject'] ?></td>
             <td><?= $row['subject_no'] ?></td>
             <td><?= $row['create_id'] ?></td>
-            <td><?= $row['select_id'] ?></td>
             <td><?= $row['start_time'] ?></td>
             <td><?= $row['end_time'] ?></td>
             

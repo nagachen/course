@@ -43,6 +43,7 @@ $row=$pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
         <input type="hidden" name='id' value="<?=$row['id']?>">
         </div>
         <div >
+            <!-- c_select 資料表 -->
             <label for="select_id">選課學生:</label>
             <!-- 先用輸入的，之後再用選的 -->
             <input type="text" name="select_id" value="<?=$row['select_id'];?>">

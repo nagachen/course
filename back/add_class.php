@@ -1,7 +1,5 @@
 <!-- 後台新增課程 -->
-<?php
-dd($_SESSION);
-?>
+
 <div class="add_class">
     <h1> 新增課程 </h1>
     <form action="./api/add_class.php" method="post">

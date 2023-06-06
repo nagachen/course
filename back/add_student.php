@@ -16,11 +16,6 @@
             <input type="text" name="email" >
         </div>
         <div>
-            <label for="course">選(開課)科目</label>
-            <!-- 先用輸入的，之後再用選的 -->
-            <input type="text" name="course" >
-        </div>
-        <div>
             <label for="acc">帳號:</label>
             <input type="text" name="acc" >
         </div>

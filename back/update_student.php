@@ -30,11 +30,6 @@ $row=$pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
             <input type="text" name="email" value="<?=$row['email'];?>">
         </div>
         <div >
-            <label for="course">(選/開)課科目</label>
-            <!-- 先用輸入的，之後再用選的 好像可以刪掉-->
-            <input type="text" name="course" value="<?=$row['course'];?>">
-        </div>
-        <div >
             <label for="acc">帳號:</label>
             <input type="text" name="acc" value="<?=$row['acc'];?>">
         </div>
