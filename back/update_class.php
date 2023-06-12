@@ -43,83 +43,41 @@ $row = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
             <input type="hidden" name='id' value="<?= $row['id'] ?>">
         </div>
         <div>
-            <!-- c_select 資料表 -->
-            <div>
-                <button type=button id="addBtn">增加學生</button>
-                <button type=button id="subBtn">減少學生</button>
-            </div>
-            <div>
-                <label for="addStd">選課學生:</label>
-                <input type="text" name="addStd[]">
-            </div>
-            <div id="std">
-            </div>
-            <div>
-                <input type="submit" value="送出">
-                <input type="reset" value="重置">
-            </div>
+            <input type="submit" value="送出">
+            <input type="reset" value="重置">
+        </div>
+        <hr>
     </form>
-</div>
-
-<script>
-    const addBtn = document.getElementById("addBtn");
-    const subBtn = document.getElementById("subBtn");
-    const std = document.getElementById("std");
-
-    function add() {
-        let div = document.createElement('div');
-        let label = document.createElement('label');
-        let txtNode = document.createTextNode("選課學生:");
-        label.appendChild(txtNode);
-        let input = document.createElement('input');
-        input.setAttribute('type', 'text');
-        input.setAttribute('name', 'addStd[]');
-        let buttonAdd = document.createElement('button');
-        buttonAdd.setAttribute('type', 'button');
-        let txtNodeBtn = document.createTextNode("增加");
-        buttonAdd.appendChild(txtNodeBtn);
-
-        let buttonDel = document.createElement('button');
-        buttonDel.setAttribute('type', 'button');
-        let txtNodeBtn2 = document.createTextNode("減少");
-        buttonDel.appendChild(txtNodeBtn2);
-
-        buttonAdd.setAttribute('class', 'addBtn');
-        buttonDel.setAttribute('class', 'delBtn');
-        div.appendChild(label);
-        div.appendChild(input);
-        div.appendChild(buttonAdd);
-        div.appendChild(buttonDel);
-        std.appendChild(div);
-
-        let addBtn = document.getElementsByClassName('addBtn');
-        addBtn = addBtn[addBtn.length - 1];
+    <div>
+        <!-- c_select 資料表 -->
 
 
-        let delBtn = document.getElementsByClassName('delBtn');
-        delBtn = delBtn[delBtn.length - 1];
+        <div class="select-std">
+            <div>
+                <form action="./api/add_c_select.php" method="post">
+                <input type="hidden" name='class_id' value="<?= $_POST['id']; ?>">
+                <input type="text" name="number">
+                <button type=submit id="addBtn" >增加學生(輸入學號)</button>
+                </form>
+            </div>
+            <?php
+            $sql = "select * from `c_select` where `class_id`= '{$_POST['id']}'";
+            $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($rows as $row) {
+            ?>
+                <div>
+                    <form action="./api/del_c_select.php" method="post">
+                    <label for="delStd[]">選課學生:</label>
+                    <input type="text" name="delStd[]" 
+                    value="<?=$row['name'];?> 學號：<?=$row['number'];?>">
+                    <input type="hidden" name='select_id' value="<?= $row['id']; ?>">
+                    <button type='submit' >刪除</button>
+                    </form>
+                </div>
+            <?php
+            }
+            ?>
+        </div>
+    </div>
 
-        addBtn.addEventListener('click', function() {
-            add();
-
-        });
-
-        delBtn.addEventListener('click', function() {
-            std.removeChild(std.lastElementChild);
-        })
-
-    }
-
-
-    addBtn.addEventListener('click', function() {
-        add();
-
-    });
-
-
-
-    subBtn.addEventListener('click', function() {
-
-        std.removeChild(std.lastElementChild);
-    });
-</script>
+   
