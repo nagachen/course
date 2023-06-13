@@ -30,26 +30,27 @@ $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
             <td><?= $row['subject'] ?></td>
             <td><?= $row['subject_no'] ?></td>
             <td><?php
-            $sql_std = "select `name` from `student` where `id`= '{$row['create_id']}'";
-            $name = $pdo->query($sql_std)->fetchColumn();
-            echo "$name";
-            ?></td>
+                $sql_std = "select `name` from `student` where `id`= '{$row['create_id']}'";
+                $name = $pdo->query($sql_std)->fetchColumn();
+                echo "$name";
+                ?></td>
             <td><?= $row['start_time'] ?></td>
             <td><?= $row['end_time'] ?></td>
 
             <td>
 
+
+
+                <form action="?do=update_class" method="get">
+
+                    <input type="hidden" name='do' value="update_class">
+                    <input type="hidden" name='id' value="<?= $row['id'] ?>">
+                    <button type='submit'>編輯</button>
+                </form>
                 <?php
 
-                if (($_SESSION['id'] === $row['create_id']) || ($_SESSION['power'] === 'super')) {
+                if (($_SESSION['power'] === 'teacher') || ($_SESSION['power'] === 'super')) {
                 ?>
-                    <!-- 老師才能編緝收到編輯和刪除的訊息才顯示, 權限為帳號等級 -->
-                    <form action="?do=update_class" method="get">
-                        <input type="hidden" name='name' value="<?=$name?>">
-                        <input type="hidden" name='do' value="update_class">
-                        <input type="hidden" name='id' value="<?= $row['id'] ?>">
-                        <button type='submit'>編輯</button>
-                    </form>
                     <form action="?do=del_class" method="post">
                         <input type="hidden" name='id' value="<?= $row['id'] ?>">
                         <button type='submit'>刪除</button>

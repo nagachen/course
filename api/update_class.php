@@ -8,7 +8,7 @@ $sql_std="select `id`,`name` from student where `name` = '{$_POST['name']}' && (
 $create_id=$pdo->query($sql_std)->fetch(PDO::FETCH_ASSOC);
 
 if(empty($create_id['id'])){
-    header("location:../index.php?do=update_class&name={$_POST['name']}&id={$_POST['id']}&error=沒有此位老師");
+    header("location:../index.php?do=update_class&id={$_POST['id']}&error=沒有此位老師");
   
 }else{
 $sql="UPDATE `class` SET 
@@ -19,6 +19,6 @@ $sql="UPDATE `class` SET
                  `end_time`='{$_POST['end_time']}'           
                 where `id` = '{$_POST['id']}'";
 $pdo->exec($sql);
-header("location:../index.php?do=update_class&id={$_POST['id']}&name={$create_id['name']}");
+header("location:../index.php?do=update_class&id={$_POST['id']}");
 }
 ?>
