@@ -27,7 +27,7 @@ $row = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
         </div>
         <div>
             <label for="create_id">課程建立者:</label>
-            <input type="text" name="create_id" value="<?= $row['create_id']; ?>">
+            <input type="text" name="name" value="<?= $_GET['name']; ?>">
         </div>
 
         <div>
@@ -40,6 +40,7 @@ $row = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
         </div>
 
         <div>
+            
             <input type="hidden" name='id' value="<?= $row['id'] ?>">
         </div>
         <div>
@@ -50,7 +51,14 @@ $row = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
     </form>
     <div>
         <!-- c_select 資料表 -->
-
+        <?php
+                    if (isset($_GET['error'])) {                      
+                        echo "<span style='color:red'>";
+                        echo $_GET['error'];
+                        echo "</span>";
+                        echo "<br>";
+                    }
+                    ?>
 
         <div class="select-std">
             <div>
@@ -58,15 +66,7 @@ $row = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
                     <input type="hidden" name='class_id' value="<?= $_GET['id']; ?>">
                     <input type="text" name="number">
                     <button type=submit id="addBtn">增加學生(輸入學號)</button>
-                    <?php
-                    if (isset($_GET['error'])) {
-                        echo "<br>";
-                        echo "<span style='color:red'>";
-                        echo $_GET['error'];
-                        echo "</span>";
-                    }
-
-                    ?>
+                    
                 </form>
             </div>
             <?php

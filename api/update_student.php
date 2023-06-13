@@ -12,5 +12,5 @@ $sql="UPDATE `student` SET  `number`='{$_POST['number']}',
                             where `id` = '{$_POST['id']}'";
 
 $pdo->exec($sql);
-header("location:../backend.php");
+header("location:../index.php");
 ?>

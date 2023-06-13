@@ -6,7 +6,9 @@ unset($_SESSION['error']);
 unset($_SESSION['history']) ;
 unset($_SESSION['login']);
 unset($_SESSION['do']);
+unset($_SESSION['name']);
+
 // echo"登出成功";
-header("location:../backend.php");
+header("location:../index.php");
 exit();
 ?>

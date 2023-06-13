@@ -9,5 +9,5 @@ echo "</pre>";
 $sql="DELETE FROM `class` where `id`='{$_POST['id']}'";
 
 $pdo->exec($sql);
-header("location:../backend.php");
+header("location:../index.php");
 ?>

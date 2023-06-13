@@ -16,6 +16,6 @@ if(isset($_GET['msg'])){
 
 ?>
 
-<a href="backend.php">回首頁</a>
+<a href="index.php">回首頁</a>
 
 <!-- <h1>查無此頁面，請洽系統管理者</h1> -->

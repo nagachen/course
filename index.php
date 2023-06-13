@@ -1,4 +1,4 @@
-<!-- 後台頁面 -->
+
 <?php
 include_once "db.php";
 ?>

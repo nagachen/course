@@ -10,5 +10,5 @@ include_once "../db.php";
                 VALUES ('{$_POST['subject']}','{$_POST['subject_no']}','{$_POST['create_id']}','{$_POST['start_time']}','{$_POST['end_time']}')";
     
     $pdo->exec($sql);
-    header("location:../backend.php");
+    header("location:../index.php");
 ?>
