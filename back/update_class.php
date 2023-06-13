@@ -3,11 +3,11 @@
 
 
 // 確認課程id是否有傳過來，不在就轉址去查詢那
-if (empty($_POST['id'])) {
+if (empty($_GET['id'])) {
     header("location:?do=query_class");
 }
 
-$sql = "select * from `class` where `id`='{$_POST['id']}'";
+$sql = "select * from `class` where `id`='{$_GET['id']}'";
 $row = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
 
 ?>
@@ -55,23 +55,33 @@ $row = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
         <div class="select-std">
             <div>
                 <form action="./api/add_c_select.php" method="post">
-                <input type="hidden" name='class_id' value="<?= $_POST['id']; ?>">
-                <input type="text" name="number">
-                <button type=submit id="addBtn" >增加學生(輸入學號)</button>
+                    <input type="hidden" name='class_id' value="<?= $_GET['id']; ?>">
+                    <input type="text" name="number">
+                    <button type=submit id="addBtn">增加學生(輸入學號)</button>
+                    <?php
+                    if (isset($_GET['error'])) {
+                        echo "<br>";
+                        echo "<span style='color:red'>";
+                        echo $_GET['error'];
+                        echo "</span>";
+                    }
+
+                    ?>
                 </form>
             </div>
             <?php
-            $sql = "select * from `c_select` where `class_id`= '{$_POST['id']}'";
+            $sql = "select * from `c_select` where `class_id`= '{$_GET['id']}'";
             $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
             foreach ($rows as $row) {
             ?>
                 <div>
                     <form action="./api/del_c_select.php" method="post">
-                    <label for="delStd[]">選課學生:</label>
-                    <input type="text" name="delStd[]" 
-                    value="<?=$row['name'];?> 學號：<?=$row['number'];?>">
-                    <input type="hidden" name='select_id' value="<?= $row['id']; ?>">
-                    <button type='submit' >刪除</button>
+                        <label for="delStd[]">選課學生:</label>
+                        <input type="text" name="delStd[]" value="<?= $row['name']; ?> 學號：<?= $row['number']; ?>">
+                        <input type="hidden" name='select_id' value="<?= $row['id']; ?>">
+                        <input type="hidden" name='class_id' value="<?= $_GET['id']; ?>">
+
+                        <button type='submit'>刪除</button>
                     </form>
                 </div>
             <?php
@@ -79,5 +89,3 @@ $row = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
             ?>
         </div>
     </div>
-
-   
