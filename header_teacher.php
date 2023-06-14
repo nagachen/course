@@ -87,7 +87,7 @@
             </ul>
         </li>
         
-        
+        <li><a href="./index.php?do=upload">檔案上傳</a>
         <li>
         <?php if(isset($_SESSION['login'])){
             echo "<a href='./api/logout.php'>登出</a>";
