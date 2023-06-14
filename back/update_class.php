@@ -85,24 +85,24 @@ $row = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
                 $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
                 foreach ($rows as $row) {
                 ?>
-                    <?php
 
-                    if (($_SESSION['power'] === 'teacher') || ($_SESSION['power'] === 'super')) {
-                    ?>
-                        <div>
-                            <form action="./api/del_c_select.php" method="post">
-                                <label for="delStd[]">選課學生:</label>
-                                <input type="text" name="delStd[]" value="<?= $row['name']; ?> 學號：<?= $row['number']; ?>">
-                                <input type="hidden" name='select_id' value="<?= $row['id']; ?>">
-                                <input type="hidden" name='class_id' value="<?= $_GET['id']; ?>">
+                    <div>
+                        <form action="./api/del_c_select.php" method="post">
+                            <label for="delStd[]">選課學生:</label>
+                            <input type="text" name="delStd[]" value="<?= $row['name']; ?> 學號：<?= $row['number']; ?>">
+                            <input type="hidden" name='select_id' value="<?= $row['id']; ?>">
+                            <input type="hidden" name='class_id' value="<?= $_GET['id']; ?>">
+                            <?php
 
+                            if (($_SESSION['power'] === 'teacher') || ($_SESSION['power'] === 'super')) {
+                            ?>
                                 <button type='submit'>刪除</button>
-                            </form>
-                        </div>
-                <?php
-                    }
-                }
-                ?>
+                        </form>
+                    </div>
+            <?php
+                            }
+                        }
+            ?>
             </div>
         </div>
 </div>

@@ -16,3 +16,10 @@
     .login>div:nth-child(1){
         margin-top: 15px;
     }
+
+    h1{
+        text-align: center;
+    }
+    form{
+        text-align: center;
+    }
