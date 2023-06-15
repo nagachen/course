@@ -10,7 +10,7 @@ $row=$pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
 ?>
 
 
-<div class="del_student">
+<div class="del_student  w-25 table table-info bg-success-subtle table-striped   mx-auto mt-3 shadow p-3 mb-5  rounded">
     <h1> 刪除課程 </h1>
    
     <form action="./api/del_class.php" method="post">
@@ -23,7 +23,7 @@ $row=$pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
             <input type="text" name="subject_no" value="<?=$row['subject_no'];?>">
         </div>
         <div >
-            <label for="create_id">課程建立者:</label>
+            <label for="create_id">課程建立:</label>
             <input type="text" name="create_id" value="<?=$row['create_id'];?>">
         </div>
         <div >

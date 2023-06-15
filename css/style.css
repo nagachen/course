@@ -5,7 +5,7 @@
         margin-top: 30px;
         width: 70%;
         /* background-color: aqua; */
-        text-align: center;
+    
     }
     .login{
         background-color: aqua;
@@ -17,9 +17,19 @@
         margin-top: 15px;
     }
 
-    h1{
+    h1, h2{
         text-align: center;
     }
-    form{
-        text-align: center;
+    
+    .dropDownMenu {
+        background-color: #e3f2fd;
+    }
+    
+    form button{
+        border-radius: 23%;
+       
+    }
+
+    .table_editDel_td{
+        width:5%;
     }

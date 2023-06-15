@@ -10,6 +10,7 @@ $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
 
 ?>
+<div class=" mx-auto w-75 fs-3 text-center boder shadow p-3 mb-5 bg-body-tertiary rounded">
 <form action="./api/set_class.php" method="post">
 <table class="query_student">
     <h1>課程查詢</h1>
@@ -54,3 +55,4 @@ $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 <br>
 <input type="submit" value="提交" >
         </form>
+</div>

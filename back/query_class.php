@@ -11,7 +11,7 @@ $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-<table class="query_student">
+<table class="query_student  table table-Warning table-striped w-75 text-center mx-auto mt-3 shadow p-3 mb-5 bg-body-tertiary rounded">
     <h1>課程查詢</h1>
     <tr>
 
@@ -20,7 +20,9 @@ $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
         <td>開課老師</td>
         <td>開始時間</td>
         <td>結束時間</td>
-        
+        <td class="table_editDel_td"></td>
+        <td class="table_editDel_td"></td>
+
 
     </tr>
     <?php
@@ -47,6 +49,8 @@ $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
                     <input type="hidden" name='id' value="<?= $row['id'] ?>">
                     <button type='submit'>編輯</button>
                 </form>
+            </td>
+            <td>
                 <?php
 
                 if (($_SESSION['power'] === 'teacher') || ($_SESSION['power'] === 'super')) {

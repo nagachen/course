@@ -13,7 +13,7 @@ $row = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
 ?>
 
 
-<div class="update_student">
+<div class="update_student add_class w-25 table table-info bg-success-subtle table-striped   mx-auto mt-3 shadow p-3 mb-5  rounded">
     <h1> 修改課程資料 </h1>
     <?php
 
@@ -29,7 +29,7 @@ $row = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
                 <input type="text" name="subject_no" value="<?= $row['subject_no']; ?>">
             </div>
             <div>
-                <label for="create_id">課程建立者:</label>
+                <label for="create_id">課程建立:</label>
                 <?php
                 $name = $pdo->query("select `student`.`name` from `student`,`class` where 
                 `class`.`create_id` = `student`.`id` && `class`.`id` = '{$_GET['id']}'")->fetchColumn();

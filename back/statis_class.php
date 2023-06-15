@@ -1,7 +1,8 @@
 <div>
    
+    <div class=" mx-auto w-25 boder shadow p-3 mb-5 bg-body-tertiary rounded">
+    <form action="./api/statis_class.php" method="post" >
     <h3>所要查看的統計資料</h3>
-    <form action="./api/statis_class.php" method="post">
     <?php
         
         $rows=$pdo->query("select `subject`,`id` from `class`  ")->fetchAll(PDO::FETCH_ASSOC);
@@ -17,6 +18,7 @@
         <input type="submit" value="送出">
         <input type="reset" value="重置">
     </form>
+    </div>
     <hr>
    
 </div>

@@ -12,7 +12,7 @@ $row = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
 
 ?>
 
-<table class="query_student">
+<table class="query_student table table-Warning table-striped w-75 text-center mx-auto mt-3 shadow p-3 mb-5 bg-body-tertiary rounded">
     <tr>
         <td>學號或員工號</td>
         <td>姓名</td>

@@ -9,8 +9,8 @@ $sql = "select * from `student`";
 $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<table class="query_student">
-    <h1>學生或員工查詢</h1>
+<table class="table table-Warning table-striped w-75 text-center mx-auto mt-3 shadow p-3 mb-5 bg-body-tertiary rounded">
+    <h1 class="shadow p-3 mb-3 bg-body-tertiary rounded w-25 mx-auto mt-3">學生或員工查詢</h1>
     <tr>
         <td>id</td>
         <td>學號或員工號</td>
@@ -19,7 +19,8 @@ $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
         <td>帳號</td>
         <td>密碼</td>
         <td>身份</td>
-
+        <td class="table_editDel_td"></td>
+        <td class="table_editDel_td"></td>
     </tr>
     <?php
     foreach ($rows as $row) {
@@ -38,6 +39,8 @@ $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
                 <input type="hidden" name='id' value="<?=$row['id']?>">
                 <button type='submit' >編輯</button>
             </form>
+            </td>
+            <td>
             <form action="?do=del_student" method="post" >
                 <input type="hidden" name='id' value="<?=$row['id']?>">
                 <button type='submit' >刪除</button>

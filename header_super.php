@@ -72,12 +72,16 @@
         background-color: lightgreen;
         
     }
+
+    .dropDownMenu {
+        background-color: #e3f2fd;
+    }
 </style>
 
 
 <header>
 
-    <ul class="dropDownMenu">
+    <ul class="dropDownMenu   shadow p-3 mb-5  rounded">
         <li><a href="index.php">網站首頁</a></li>
         <li><a href="">課程相關</a>
             <ul>
@@ -95,7 +99,7 @@
                 <li><a href="./index.php?do=query_student">查詢學生或老師資料</a></li>              
             </ul>
         </li>
-        <li><a href="./index.php?do=upload">檔案上傳</a>
+        <li><a href="./index.php?do=upload">檔案上傳</a></li>
         <li>
         <?php if(isset($_SESSION['login'])){
             echo "<a href='./api/logout.php'>登出</a>";

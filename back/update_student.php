@@ -13,8 +13,8 @@ $row=$pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
 ?>
 
 
-<div class="update_student">
-    <h1> 修改學生或員工資料 </h1>
+<div class="update_student w-25 table table-info  bg-success-subtle table-striped   mx-auto mt-3 shadow p-3 mb-5  rounded">
+    <h2> 修改學生或員工資料 </h2>
    
     <form action="./api/update_student.php" method="post">
         <div >
@@ -22,11 +22,11 @@ $row=$pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
             <input type="text" name="number" value="<?=$row['number'];?>">
         </div>
         <div >
-            <label for="name">姓名:</label>
+            <label for="name">姓名:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
             <input type="text" name="name" value="<?=$row['name'];?>">
         </div>
         <div >
-            <label for="email">電子郵件:</label>
+            <label for="email">電子郵件:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</label>
             <input type="text" name="email" value="<?=$row['email'];?>">
         </div>
         <div >

@@ -1,6 +1,6 @@
 <!-- 後台新增課程 -->
 
-<div class="add_class">
+<div class="add_class w-25 table table-info bg-success-subtle table-striped   mx-auto mt-3 shadow p-3 mb-5  rounded">
     <h1> 新增課程 </h1>
     <form action="./api/add_class.php" method="post">
         <div>
@@ -27,8 +27,8 @@
             
             <input type="hidden" name="create_id" value=<?="{$_SESSION['id']}"?> >
         </div>
-        <div>
-            <input type="submit" value="送出">
+        <div class="text-center">
+            <input type="submit" value="送出" >
             <input type="reset" value="重置">
         </div>
     </form>

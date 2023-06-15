@@ -10,8 +10,8 @@ $row=$pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
 ?>
 
 
-<div class="del_student">
-    <h1> 刪除學生或員工資料 </h1>
+<div class="del_student w-25 table table-info bg-success-subtle table-striped   mx-auto mt-3 shadow p-3 mb-5  rounded">
+    <h2> 刪除學生或員工資料 </h2>
    
     <form action="./api/del_student.php" method="post">
         <div >

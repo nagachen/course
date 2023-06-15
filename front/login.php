@@ -1,15 +1,20 @@
 
+<div class="container w-25 mt-5 pt-5 border border-primary shadow p-3 mb-5 bg-body-tertiary rounded">
+  <h2>選課系統登入</h2>
+  <form action="./api/login.php" method="post">
+    <div class="mb-3 mt-3">
+      <label for="acc">帳號:</label>
+      <input type="text" class="form-control" id="acc" placeholder="Enter acc" name="acc">
+    </div>
+    <div class="mb-3">
+      <label for="pwd">密碼:</label>
+      <input type="password" class="form-control" id="pw" placeholder="Enter password" name="pw">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
 
-<form action="./api/login.php" method="post" class="login">
-    <div>
-        <label for="">帳號</label>
-        <input type="text" name="acc" id="acc">
-    </div>
-    <div>
-        <label for="">密碼</label>
-        <input type="text" name="pw" id="pw">
-    </div>
-    <div><input type="submit" value="登入"></div>
     <?PHP
     if (isset($_SESSION['error'])) {
         echo "<span style='color:red;'>";
@@ -17,4 +22,3 @@
         echo "</span>";
     }
     ?>
-</form>
