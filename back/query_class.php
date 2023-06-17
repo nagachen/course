@@ -44,7 +44,7 @@ $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 
 
                 <form action="?do=update_class" method="get">
-
+             
                     <input type="hidden" name='do' value="update_class">
                     <input type="hidden" name='id' value="<?= $row['id'] ?>">
                     <button type='submit'>編輯</button>
@@ -52,8 +52,9 @@ $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
             </td>
             <td>
                 <?php
+                   
 
-                if (($_SESSION['power'] === 'teacher') || ($_SESSION['power'] === 'super')) {
+                if (($_SESSION['id'] === $row['create_id']) || ($_SESSION['power'] === 'super')) {
                 ?>
                     <form action="?do=del_class" method="post">
                         <input type="hidden" name='id' value="<?= $row['id'] ?>">

@@ -45,12 +45,10 @@ include_once "db.php";
     }else{
         include "./front/login.php";
     }
-        
-        
-   
-
-
     ?>
+
+
+
 </body>
 
 </html>

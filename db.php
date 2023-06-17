@@ -4,8 +4,8 @@
 
 <?php
 
-$dsn = "mysql:host=localhost;charset=utf8;dbname=course";
-$pdo = new PDO($dsn, 'root', '');
+$dsn = "mysql:host=localhost;charset=utf8;dbname=s1120208";
+$pdo = new PDO($dsn, 's1120208', 's1120208');
 session_start();
 function dd($arg)
 {
