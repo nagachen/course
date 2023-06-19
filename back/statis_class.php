@@ -4,8 +4,8 @@
     <form action="./api/statis_class.php" method="post" >
     <h3>所要查看的統計資料</h3>
     <?php
+        $rows=$class->all();
         
-        $rows=$pdo->query("select `subject`,`id` from `class`  ")->fetchAll(PDO::FETCH_ASSOC);
         foreach($rows as $row){
             
     ?>

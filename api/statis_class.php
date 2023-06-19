@@ -6,4 +6,10 @@ where `c_select`.`class_id`= `A`.`id`";
 $sql_total="select count(*) from `c_select`";
 $std=$pdo->query($sql_std)->fetchColumn(); //有多少人選？
 $total=$pdo->query($sql_total)->fetchColumn(); //一共有多少人？
+
+$std=
+
+
+
+
 header("location:../index.php?do=statis_class&std=$std&total=$total&class={$_POST['class']}");

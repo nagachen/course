@@ -25,6 +25,7 @@
      */
     function all(...$arg){
         $sql="select * from $this->table";
+        if(!empty($arg)){
         if(is_array($arg[0])){
             foreach($arg[0] as $key => $value){
                 $tmp[]="`$key`='$value'";
@@ -33,6 +34,8 @@
         }else{
             $sql=$sql . $arg[0];
         }
+    }
+
         //all($array,$sql) 帶入陣列及其他sql字串，表示要撈取符合陣列條件及其它限制條件的資料
         if(isset($arg[1])){
             $sql=$sql . $arg[1];
@@ -57,6 +60,7 @@
         }else{
             $sql = $sql . "where `id` = '$arg'";
         }
+       
         return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
 
@@ -170,4 +174,6 @@ function dd($arg)
     print_r($arg);
     echo "</pre>";
 }
+$student=new DB('student');
+$class=new DB('class');
 ?>
