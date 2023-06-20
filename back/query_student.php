@@ -5,8 +5,7 @@
 
 <?php
 
-$sql = "select * from `student`";
-$rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+$rows=$student->all();
 ?>
 
 <table class="table table-Warning table-striped w-75 text-center mx-auto mt-3 shadow p-3 mb-5 bg-body-tertiary rounded">

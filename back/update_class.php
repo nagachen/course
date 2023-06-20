@@ -7,8 +7,8 @@ if (empty($_GET['id'])) {
     header("location:?do=query_class");
 }
 
-$sql = "select * from `class` where `id`='{$_GET['id']}'";
-$row = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
+// $sql = "select * from `class` where `id`='{$_GET['id']}'";
+$row = $class->find(["id"=>"{$_GET['id']}"]);
 
 ?>
 
@@ -31,11 +31,12 @@ $row = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
             <div>
                 <label for="create_id">課程建立:</label>
                 <?php
-                $name = $pdo->query("select `student`.`name` from `student`,`class` where 
-                `class`.`create_id` = `student`.`id` && `class`.`id` = '{$_GET['id']}'")->fetchColumn();
-
+                $sql = "select `student`.`name` from `student`,`class` where 
+                `class`.`create_id` = `student`.`id` && `class`.`id` = '{$_GET['id']}'";
+                $name=array_column(q($sql),'name');
+                
                 ?>
-                <input type="text" name="name" value="<?= $name; ?>">
+                <input type="text" name="name" value="<?= $name[0]; ?>">
             </div>
 
             <div>
@@ -81,8 +82,8 @@ $row = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
                     </form>
                 </div>
                 <?php
-                $sql = "select * from `c_select` where `class_id`= '{$_GET['id']}'";
-                $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+                // $sql = "select * from `c_select` where `class_id`= '{$_GET['id']}'";
+                $rows = $c_select->all(["class_id"=>"{$_GET['id']}"]);
                 foreach ($rows as $row) {
                 ?>
 

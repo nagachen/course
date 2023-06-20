@@ -8,6 +8,6 @@ echo "</pre>";
     
 $sql="DELETE FROM `student` where `id`='{$_POST['id']}'";
 
-$pdo->exec($sql);
+$student->del(["id"=>"{$_POST['id']}"]);
 header("location:../index.php");
 ?>

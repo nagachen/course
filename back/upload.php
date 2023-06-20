@@ -13,7 +13,8 @@
         <tr>
             <?php
             $sql = "select `img` from `img`";
-            $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+            $rows=$img->all();
+            
            
             if (isset($_GET['error'])) {
                 echo "<span style='color:red'>";

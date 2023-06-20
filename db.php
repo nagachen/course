@@ -155,6 +155,33 @@
         return $this->math('avg',$col,...$arg);
     }
     }
+class Student extends DB{
+    
+    function __construct(){
+        parent::__construct('student');
+    }
+}
+
+class Subject extends DB{
+
+    function __construct(){
+        parent::__construct('class');
+    }  
+}
+
+class C_select extends DB{
+    function __construct(){
+        parent::__construct('c_select');
+    }
+}
+class Img extends DB{
+    function __construct(){
+        parent::__construct('img');
+    }
+    
+}
+
+
 ?>
 
 
@@ -174,6 +201,15 @@ function dd($arg)
     print_r($arg);
     echo "</pre>";
 }
-$student=new DB('student');
-$class=new DB('class');
+
+
+function q($sql){
+        $pdo=new PDO("mysql:host=localhost;charset=utf8;dbname=s1120208",'s1120208','s1120208');
+        return $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+}
+
+$student=new Student;
+$class=new Subject;
+$c_select=new C_select;
+$img=new Img;
 ?>

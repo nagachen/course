@@ -3,11 +3,14 @@ include_once "../db.php";
 $sql_std="select count(`c_select`.`class_id`) 
 from `c_select`,(select `id` from `class` where subject = '{$_POST['class']}')A 
 where `c_select`.`class_id`= `A`.`id`";
-$sql_total="select count(*) from `c_select`";
-$std=$pdo->query($sql_std)->fetchColumn(); //有多少人選？
-$total=$pdo->query($sql_total)->fetchColumn(); //一共有多少人？
 
-$std=
+$sql_total="select count(*) from `c_select`";
+$sql_student=array_column(q($sql_std),'count(`c_select`.`class_id`)');
+
+$std=$sql_student[0]; //有多少人選？
+$total=$c_select->count(); //一共有多少人？
+
+
 
 
 

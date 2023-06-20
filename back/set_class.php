@@ -6,7 +6,7 @@
 <?php
 
 $sql = "select * from `class`";
-$rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
+$rows = $class->all();
 
 
 ?>
@@ -32,9 +32,10 @@ $rows = $pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
             <td><?= $row['subject'] ?></td>
             <td><?= $row['subject_no'] ?></td>
             <td><?php
-                $sql_std = "select `name` from `student` where `id`= '{$row['create_id']}'";
-                $name = $pdo->query($sql_std)->fetchColumn();
-                echo "$name";
+            
+                $name = $student->find(["id"=>"{$row['create_id']}"]);
+                
+                echo "$name[name]";
                 ?></td>
             <td><?= $row['start_time'] ?></td>
             <td><?= $row['end_time'] ?></td>
