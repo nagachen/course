@@ -7,7 +7,7 @@
       <input type="text" class="form-control" id="acc" placeholder="Enter acc" name="acc">
     </div>
     <div class="mb-3">
-      <label for="pwd">密碼:</label>
+      <label for="pw">密碼:</label>
       <input type="password" class="form-control" id="pw" placeholder="Enter password" name="pw">
     </div>
     

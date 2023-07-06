@@ -85,8 +85,8 @@
         <li><a href="index.php">網站首頁</a></li>
         <li><a href="">課程相關</a>
             <ul>
-            <li><a href="./index.php?do=add_class">新增課程資料</a></li>
-                <li><a href="./index.php?do=query_class">查詢課程資料</a></li> 
+            
+                <li><a href="./index.php?do=subject">查詢課程資料</a></li> 
                 <li><a href="./index.php?do=statis_class">課程資料統計</a></li>
                 <li><a href="./index.php?do=set_class">設定啟用課程資料</a></li>           
 
@@ -95,8 +95,8 @@
         
         <li><a href="">學生資料</a>
             <ul>
-                <li><a href="./index.php?do=add_student">新增學生或老師資料</a></li>
-                <li><a href="./index.php?do=query_student">查詢學生或老師資料</a></li>              
+               
+                <li><a href="./index.php?do=student">查詢學生或老師資料</a></li>              
             </ul>
         </li>
         <li><a href="./index.php?do=upload">檔案上傳</a></li>

@@ -5,7 +5,7 @@
 
 <?php
 
-$rows=$student->all();
+$rows = $Student->all();
 ?>
 
 <table class="table table-Warning table-striped w-75 text-center mx-auto mt-3 shadow p-3 mb-5 bg-body-tertiary rounded">
@@ -34,16 +34,20 @@ $rows=$student->all();
             <td><?= $row['power'] ?></td>
             <td>
                 <!-- 收到編輯和刪除的訊息才顯示, 權限為帳號等級 -->
-            <form action="?do=update_student" method="post" >
-                <input type="hidden" name='id' value="<?=$row['id']?>">
-                <button type='submit' >編輯</button>
-            </form>
+                <form action="?do=add_student" method="post">
+                    <input type="hidden" name='id' value="<?= $row['id'] ?>">
+                    <button type='submit'>新增</button>
+                </form>
+                <form action="?do=update_student" method="post">
+                    <input type="hidden" name='id' value="<?= $row['id'] ?>">
+                    <button type='submit'>編輯</button>
+                </form>
             </td>
             <td>
-            <form action="?do=del_student" method="post" >
-                <input type="hidden" name='id' value="<?=$row['id']?>">
-                <button type='submit' >刪除</button>
-            </form>
+                <form action="?do=del_student" method="post">
+                    <input type="hidden" name='id' value="<?= $row['id'] ?>">
+                    <button type='submit'>刪除</button>
+                </form>
 
             </td>
         </tr>

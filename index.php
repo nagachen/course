@@ -1,6 +1,9 @@
 
 <?php
-include_once "db.php";
+$BASEDIR=dirname(__FILE__);
+// echo ($BASEDIR);
+ include_once $BASEDIR."/base.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,24 +27,24 @@ include_once "db.php";
     if (isset($_SESSION['login']) && isset($_SESSION['power'])) {
         switch($_SESSION['power']){
             case 'super':
-                include_once "header_super.php";
+                include_once "./header/header_super.php";
             break;
             case 'teacher':
-                include_once "header_teacher.php";
+                include_once "./header/header_teacher.php";
             break;
             case 'member':
-                include_once "header_member.php";
+                include_once "./head/header_member.php";
             break;
             default:
             break;
         }
-        $do = '';
-        if (isset($_GET['do'])) {
-            $do = $_GET['do'];
-        } else {
-            $do = "list";
-        }
-        include "./back/$do.php";
+        $do  = $_GET['do']??"student";
+        $table=ucfirst($do);
+        // dd($$table);
+        $path=$$table->list();
+        
+         include "$path";
+        
     }else{
         include "./front/login.php";
     }

@@ -1,7 +1,7 @@
 <!-- 登入驗證 -->
 
 <?php
-include "../db.php";
+include_once "../base.php";
 // dd($_POST);
 $row=$student->find(["acc"=>"{$_POST['acc']}","pw"=>"{$_POST['pw']}"]);
 // dd($row);
@@ -22,8 +22,7 @@ if(!empty($row)){         //驗證是否成功？
        exit();//需注意header失敗會執行下方HEADER
     //    dd($_SESSION);
 }else{
-    
-   
+
     $_SESSION['error']= '帳號密碼錯誤';
    header("location:../index.php?do=error&error=1");
 }

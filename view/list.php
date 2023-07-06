@@ -5,11 +5,11 @@
 
 <?php
 
-
-
 // $sql = "select * from `student` where `acc` = '{$_SESSION['login']}'";
 // $row = $pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
-$row=$student->find(["acc" => "{$_SESSION['login']}"]);
+
+
+$row=$Student->find(["acc" => "{$_SESSION['login']}"]);
 
 ?>
 

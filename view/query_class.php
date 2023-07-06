@@ -4,7 +4,7 @@
 
 
 <?php
-$rows=$class->all(["close"=>"1"]);
+$rows=$Subject->all(["close"=>"1"]);
 
 ?>
 
@@ -19,6 +19,7 @@ $rows=$class->all(["close"=>"1"]);
         <td>結束時間</td>
         <td class="table_editDel_td"></td>
         <td class="table_editDel_td"></td>
+        <td class="table_editDel_td"></td>
 
 
     </tr>
@@ -29,16 +30,30 @@ $rows=$class->all(["close"=>"1"]);
             <td><?= $row['subject'] ?></td>
             <td><?= $row['subject_no'] ?></td>
             <td><?php
-                $name=$student->find(["id"=>"{$row['create_id']}"]);
+                $name=$Student->find(["id"=>"{$row['create_id']}"]);
                
                 echo $name['name'];
                 ?></td>
             <td><?= $row['start_time'] ?></td>
             <td><?= $row['end_time'] ?></td>
 
+
             <td>
+                <?php
+                   
 
+                if (($_SESSION['id'] === $row['create_id']) || ($_SESSION['power'] === 'super')) {
+                ?>
+                    <form action="?do=del_class" method="post">
+                        <input type="hidden" name='id' value="<?= $row['id'] ?>">
+                        <button type='submit'>新增</button>
+                    </form>
+                <?php
+                }
+                ?>
+            </td>
 
+            <td>
 
                 <form action="?do=update_class" method="get">
              
