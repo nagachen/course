@@ -24,8 +24,8 @@
             <input type="date" name="end_time" >
         </div>
         <div>
-            
-            <input type="hidden" name="create_id" value=<?="{$_SESSION['id']}"?> >
+        <input type="hidden" name="table" value=<?=($Subject->get_table());?>>           
+            <input type="hidden" name="create_id" value=<?="{$_SESSION['id']}"?>>
         </div>
         <div class="text-center">
             <input type="submit" value="送出" >

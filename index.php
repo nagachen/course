@@ -1,8 +1,7 @@
-
 <?php
-$BASEDIR=dirname(__FILE__);
+$BASEDIR = dirname(__FILE__);
 // echo ($BASEDIR);
- include_once $BASEDIR."/base.php";
+include_once $BASEDIR . "/base.php";
 
 ?>
 <!DOCTYPE html>
@@ -23,29 +22,39 @@ $BASEDIR=dirname(__FILE__);
     //需登入才可以用選單
     //沒有登入只能看一些無關緊要的資訊呈現
     // 登入後同時將進行身份驗證，使用session,並展現可以操作的相關資訊(一連串的驗證)
-  
+
     if (isset($_SESSION['login']) && isset($_SESSION['power'])) {
-        switch($_SESSION['power']){
+        switch ($_SESSION['power']) {
             case 'super':
                 include_once "./header/header_super.php";
-            break;
+                break;
             case 'teacher':
                 include_once "./header/header_teacher.php";
-            break;
+                break;
             case 'member':
                 include_once "./head/header_member.php";
-            break;
+                break;
             default:
-            break;
+                break;
         }
-        $do  = $_GET['do']??"student";
-        $table=ucfirst($do);
-        // dd($$table);
-        $path=$$table->list();
-        
-         include "$path";
-        
-    }else{
+        $do  = $_GET['do'] ?? "student";
+        switch ($do) {
+            case 'add_student':
+            case 'add_class':
+            case 'del_class':
+            case 'del_student':
+            case 'update_class':
+            case 'update_student':
+                include "./view/modal/" . $do . ".php";
+                break;
+            default:
+                $table = ucfirst($do);
+                // dd($$table);
+                $path = $$table->list();
+
+                include "$path";
+        }
+    } else {
         include "./front/login.php";
     }
     ?>

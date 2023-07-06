@@ -44,8 +44,8 @@ $rows=$Subject->all(["close"=>"1"]);
 
                 if (($_SESSION['id'] === $row['create_id']) || ($_SESSION['power'] === 'super')) {
                 ?>
-                    <form action="?do=del_class" method="post">
-                        <input type="hidden" name='id' value="<?= $row['id'] ?>">
+                    <form action="?do=add_class" method="post">
+                       
                         <button type='submit'>新增</button>
                     </form>
                 <?php

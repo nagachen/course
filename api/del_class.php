@@ -1,13 +1,13 @@
 
 <!-- 刪除課程api -->
 <?php
-include_once "../db.php";
+include_once "../base.php";
 echo "<pre>";
 print_r($_POST);
 echo "</pre>";
     
-$sql="DELETE FROM `class` where `id`='{$_POST['id']}'";
+$table=ucfirst($_POST['table']);
+$$table->del($_POST['id']);
 
-$pdo->exec($sql);
 header("location:../index.php");
 ?>

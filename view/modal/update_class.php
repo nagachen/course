@@ -8,7 +8,7 @@ if (empty($_GET['id'])) {
 }
 
 // $sql = "select * from `class` where `id`='{$_GET['id']}'";
-$row = $class->find(["id"=>"{$_GET['id']}"]);
+$row = $Subject->find(["id" => "{$_GET['id']}"]);
 
 ?>
 
@@ -31,10 +31,10 @@ $row = $class->find(["id"=>"{$_GET['id']}"]);
             <div>
                 <label for="create_id">課程建立:</label>
                 <?php
-                $sql = "select `student`.`name` from `student`,`class` where 
-                `class`.`create_id` = `student`.`id` && `class`.`id` = '{$_GET['id']}'";
-                $name=array_column(q($sql),'name');
-                
+                $sql = "select `student`.`name` from `student`,`subject` where 
+                `subject`.`create_id` = `student`.`id` && `subject`.`id` = '{$_GET['id']}'";
+                $name = array_column(q($sql), 'name');
+
                 ?>
                 <input type="text" name="name" value="<?= $name[0]; ?>">
             </div>
@@ -49,7 +49,7 @@ $row = $class->find(["id"=>"{$_GET['id']}"]);
             </div>
 
             <div>
-
+                <input type="hidden" name="table" value=<?= ($Subject->get_table()); ?>>
                 <input type="hidden" name='id' value="<?= $row['id'] ?>">
             </div>
             <div>
@@ -83,7 +83,7 @@ $row = $class->find(["id"=>"{$_GET['id']}"]);
                 </div>
                 <?php
                 // $sql = "select * from `c_select` where `class_id`= '{$_GET['id']}'";
-                $rows = $c_select->all(["class_id"=>"{$_GET['id']}"]);
+                $rows = $C_select->all(["class_id" => "{$_GET['id']}"]);
                 foreach ($rows as $row) {
                 ?>
 

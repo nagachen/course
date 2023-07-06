@@ -5,8 +5,8 @@ if(empty($_POST['id'])){
 header("location:?do=query_class");
 }
 
-$sql="select * from `class` where `id`='{$_POST['id']}'";
-$row=$pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
+// $sql="select * from `class` where `id`='{$_POST['id']}'";
+$row=$Subject->find($_POST['id']);
 ?>
 
 
@@ -36,12 +36,14 @@ $row=$pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
         </div>
         
         <div>
+        <input type="hidden" name="table" value=<?=($Subject->get_table());?>>
         <input type="hidden" name='id' value="<?=$row['id']?>">
+
         </div>
         <div><h1 style="color:red;">確定是否要刪除這筆資料？</h1></div>
         <div>
             <input type="submit" value="確定">
-            <input type="reset" value="取消" onclick="location.href='?do=query_class'">
+            <input type="reset" value="取消" onclick="location.href='?do=Subject'">
         </div>
     </form>
 </div>

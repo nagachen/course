@@ -25,6 +25,10 @@ class DB
      * all($array,$sql) 帶入陣列及其他sql字串，表示要撈取符合陣列條件及其它限制條件的資料
      * all($sql) 帶入一個sql字串，表示要撈取符合sql字串條件的資料
      */
+
+     function get_table(){
+        return $this->table;
+     }
     function all(...$arg)
     {
         $sql = "select * from $this->table";
@@ -62,9 +66,9 @@ class DB
             }
             $sql = $sql . " where " . join(" && ", $tmp);
         } else {
-            $sql = $sql . "where `id` = '$arg'";
+            $sql = $sql . " where `id` = '$arg'";
         }
-
+       
         return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
 
@@ -107,7 +111,7 @@ class DB
 
             $sql = $sql . " where " . join(" && ", $tmp);
         } else if (is_numeric($arg)) {
-            $sql = $sql . "where `id` =" . $arg;
+            $sql = $sql . " where `id` =" . $arg;
         } else {
             $sql = $sql . $arg;
         }
