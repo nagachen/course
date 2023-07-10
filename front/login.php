@@ -13,8 +13,8 @@
     
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
-</div>
 
+  <p class="text-center">
     <?PHP
     if (isset($_SESSION['error'])) {
         echo "<span style='color:red;'>";
@@ -22,3 +22,5 @@
         echo "</span>";
     }
     ?>
+    </p>
+    </div>

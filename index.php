@@ -32,12 +32,12 @@ include_once $BASEDIR . "/base.php";
                 include_once "./header/header_teacher.php";
                 break;
             case 'member':
-                include_once "./head/header_member.php";
+                include_once "./header/header_member.php";
                 break;
             default:
                 break;
         }
-        $do  = $_GET['do'] ?? "student";
+        $do  = $_GET['do'] ?? "list";
         switch ($do) {
             case 'add_student':
             case 'add_class':
@@ -48,13 +48,15 @@ include_once $BASEDIR . "/base.php";
                 include "./view/modal/" . $do . ".php";
                 break;
             case 'set_class':
-            case 'statis_class':
-            
+            case 'statis_class':            
                 include "./view/" . $do . ".php";
+                break;
+            case 'list':
+                include "./view/list.php";
                 break;
             default:
                 $table = ucfirst($do);
-                //  dd($$table);
+                //   dd($table);
                 $path = $$table->list();
 
                 include "$path";

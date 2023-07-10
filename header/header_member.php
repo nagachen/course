@@ -82,12 +82,12 @@
         <li><a href="">課程相關</a>
             <ul>
          
-                <li><a href="./index.php?do=query_class">查詢課程資料</a></li> 
+                <li><a href="./index.php?do=subject">查詢課程資料</a></li> 
                 <li><a href="./index.php?do=statis_class">課程資料統計</a></li>           
             </ul>
         </li>
         
-        <li><a href="./index.php?do=upload">檔案上傳</a>
+        <li><a href="./index.php?do=img">檔案上傳</a>
         <li>
         <?php if(isset($_SESSION['login'])){
             echo "<a href='./api/logout.php'>登出</a>";

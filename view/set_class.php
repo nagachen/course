@@ -5,7 +5,7 @@
 
 <?php
 
-$sql = "select * from `class`";
+
 $rows = $Subject->all();
 
 
