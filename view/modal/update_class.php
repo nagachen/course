@@ -74,7 +74,8 @@ $row = $Subject->find(["id" => "{$_GET['id']}"]);
 
             <div class="select-std">
                 <div>
-                    <form action="./api/add_c_select.php" method="post">
+                    <form action="./api/add.php" method="post">
+                    <input type="hidden" name='table' value="c_select">
                         <input type="hidden" name='class_id' value="<?= $_GET['id']; ?>">
                         <input type="text" name="number">
                         <button type=submit id="addBtn">增加學生(輸入學號)</button>

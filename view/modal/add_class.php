@@ -2,7 +2,7 @@
 
 <div class="add_class w-25 table table-info bg-success-subtle table-striped   mx-auto mt-3 shadow p-3 mb-5  rounded">
     <h1> 新增課程 </h1>
-    <form action="./api/add_class.php" method="post">
+    <form action="./api/add.php" method="post">
         <div>
             <label for="subject">課程名稱</label>
             <input type="text" name="subject" >

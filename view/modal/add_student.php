@@ -1,6 +1,6 @@
 <!-- 後台新增學生或員工 -->
 <div class="container w-50 shadow p-3 mb-5 bg-body-tertiary rounded text-center">
-<form action="./api/add_student.php" method="post" >
+<form action="./api/add.php" method="post" >
     <h1> 新增學生或員工 </h1>
     
         <div class="row">
@@ -46,6 +46,7 @@
             </div>
         </div>
         <div>
+            <input type="hidden" name="table" value="<?=$_POST['table'];?>">
             <input type="submit" value="送出">
             <input type="reset" value="重置">
         </div>
