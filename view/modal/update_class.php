@@ -19,7 +19,7 @@ $row = $Subject->find(["id" => "{$_GET['id']}"]);
 
     if (($_SESSION['id'] === $row['create_id']) || ($_SESSION['power'] === 'super')) {
     ?>
-        <form action="./api/update_class.php" method="post">
+        <form action="./api/update.php" method="post">
             <div>
                 <label for="subject">課程名稱:</label>
                 <input type="text" name="subject" value="<?= $row['subject']; ?>">
@@ -89,11 +89,12 @@ $row = $Subject->find(["id" => "{$_GET['id']}"]);
                 ?>
 
                     <div>
-                        <form action="./api/del_c_select.php" method="post">
+                        <form action="./api/del.php" method="post">
                             <label for="delStd[]">選課學生:</label>
                             <input type="text" name="delStd[]" value="<?= $row['name']; ?> 學號：<?= $row['number']; ?>">
                             <input type="hidden" name='select_id' value="<?= $row['id']; ?>">
                             <input type="hidden" name='class_id' value="<?= $_GET['id']; ?>">
+                            <input type="hidden" name='table' value="c_select">
                             <?php
 
                             if (($_SESSION['power'] === 'teacher') || ($_SESSION['power'] === 'super')) {

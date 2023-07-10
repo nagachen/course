@@ -13,7 +13,7 @@ $row=$Student->find(["id"=>"{$_POST['id']}"]);
 <div class="del_student w-25 table table-info bg-success-subtle table-striped   mx-auto mt-3 shadow p-3 mb-5  rounded">
     <h2> 刪除學生或員工資料 </h2>
    
-    <form action="./api/del_student.php" method="post">
+    <form action="./api/del.php" method="post">
         <div >
             <label for="number">學號:</label>
             <input type="text" name="number" value="<?=$row['number'];?>">
@@ -39,6 +39,7 @@ $row=$Student->find(["id"=>"{$_POST['id']}"]);
             <input type="text" name="power" value="<?=$row['power'];?>">
         </div>
         <div>
+        <input type="hidden" name="table" value="<?=$_POST['table'];?>">
         <input type="hidden" name='id' value="<?=$row['id']?>">
         </div>
         <div><h1 style="color:red;">確定是否要刪除這筆資料？</h1></div>

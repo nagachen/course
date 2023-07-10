@@ -16,7 +16,7 @@ $row=$Student->find(["id"=>"{$_POST['id']}"]);
 <div class="update_student w-25 table table-info  bg-success-subtle table-striped   mx-auto mt-3 shadow p-3 mb-5  rounded">
     <h2> 修改學生或員工資料 </h2>
    
-    <form action="./api/update_student.php" method="post">
+    <form action="./api/update.php" method="post">
         <div >
             <label for="number">學號或員工號:</label>
             <input type="text" name="number" value="<?=$row['number'];?>">
@@ -42,6 +42,8 @@ $row=$Student->find(["id"=>"{$_POST['id']}"]);
             <input type="text" name="power" value="<?=$row['power'];?>">
         </div>
         <div>
+        <input type="hidden" name='table' value="<?=$_POST['table']; ?>">
+
         <input type="hidden" name='id' value="<?=$row['id']?>">
         </div>
         <div>

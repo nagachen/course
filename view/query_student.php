@@ -38,19 +38,21 @@ $rows = $Student->all();
             <td>
                 <!-- 收到編輯和刪除的訊息才顯示, 權限為帳號等級 -->
                 <form action="?do=add_student" method="post">
-                <input type="hidden" name='table' value="<?= $_GET['do']; ?>">
+                    <input type="hidden" name='table' value="<?= $_GET['do']; ?>">
 
                     <button type='submit'>新增</button>
                 </form>
             </td>
             <td>
                 <form action="?do=update_student" method="post">
+                <input type="hidden" name='table' value="<?=$_GET['do']; ?>">
                     <input type="hidden" name='id' value="<?= $row['id']; ?>">
                     <button type='submit'>編輯</button>
                 </form>
             </td>
             <td>
                 <form action="?do=del_student" method="post">
+                    <input type="hidden" name='table' value="<?=$_GET['do']; ?>">
                     <input type="hidden" name='id' value="<?= $row['id']; ?>">
                     <button type='submit'>刪除</button>
                 </form>

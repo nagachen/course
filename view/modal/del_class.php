@@ -13,7 +13,7 @@ $row=$Subject->find($_POST['id']);
 <div class="del_student  w-25 table table-info bg-success-subtle table-striped   mx-auto mt-3 shadow p-3 mb-5  rounded">
     <h1> 刪除課程 </h1>
    
-    <form action="./api/del_class.php" method="post">
+    <form action="./api/del.php" method="post">
         <div >
             <label for="subject">課程名稱:</label>
             <input type="text" name="subject" value="<?=$row['subject'];?>">
