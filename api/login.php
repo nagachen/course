@@ -3,7 +3,7 @@
 <?php
 include_once "../base.php";
 // dd($_POST);
-$row=$student->find(["acc"=>"{$_POST['acc']}","pw"=>"{$_POST['pw']}"]);
+$row=$Student->find(["acc"=>"{$_POST['acc']}","pw"=>"{$_POST['pw']}"]);
 // dd($row);
 
 if(!empty($row)){         //驗證是否成功？

@@ -4,7 +4,7 @@
     <form action="./api/statis_class.php" method="post" >
     <h3>所要查看的統計資料</h3>
     <?php
-        $rows=$class->all();
+        $rows=$Subject->all();
         
         foreach($rows as $row){
             

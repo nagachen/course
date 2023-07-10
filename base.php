@@ -5,7 +5,7 @@ $BASEDIR=dirname(__FILE__);
 include_once $BASEDIR."/Controller/c_select.php";
 include_once $BASEDIR."/Controller/student.php";
 include_once $BASEDIR."/Controller/subject.php";
-include_once $BASEDIR."/Controller/upload.php";
+include_once $BASEDIR."/Controller/img.php";
 
 ?>
 
@@ -34,5 +34,5 @@ function q($sql){
 $Student=new Student;
 $Subject=new Subject;
 $C_select=new C_select;
-$Upload=new Upload;
+$Img=new Img;
 ?>

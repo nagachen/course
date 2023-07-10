@@ -47,6 +47,7 @@ class DB
         if (isset($arg[1])) {
             $sql = $sql . $arg[1];
         }
+        // dd($sql);
         return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 

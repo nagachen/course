@@ -1,13 +1,12 @@
 <!-- 後台刪除學生或員工 -->
 <?php   
+
 // 確認學生id是否有傳過來，不在就轉址去查詢那
 if(empty($_POST['id'])){
 header("location:?do=query_student");
 }
-
-$sql="select * from `student` where `id`='{$_POST['id']}'";
 // $row=$pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
-$row=$student->find(["id"=>"{$_POST['id']}"]);
+$row=$Student->find(["id"=>"{$_POST['id']}"]);
 ?>
 
 

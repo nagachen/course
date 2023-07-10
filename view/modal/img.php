@@ -1,7 +1,7 @@
     
     <h1>檔案上傳</h1>
     <table class="table table-Warning table-striped w-75 text-center mx-auto mt-3 shadow p-3 mb-5 bg-body-tertiary rounded">
-    <form action="./api/upload.php" method="post" enctype="multipart/form-data">    
+    <form action="./api/img.php" method="post" enctype="multipart/form-data">    
     <tr>
             <td>
                 <input type=file name="img">
@@ -13,7 +13,7 @@
         <tr>
             <?php
             $sql = "select `img` from `img`";
-            $rows=$img->all();
+            $rows=$Img->all();
             
            
             if (isset($_GET['error'])) {

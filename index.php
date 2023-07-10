@@ -47,9 +47,14 @@ include_once $BASEDIR . "/base.php";
             case 'update_student':
                 include "./view/modal/" . $do . ".php";
                 break;
+            case 'set_class':
+            case 'statis_class':
+            
+                include "./view/" . $do . ".php";
+                break;
             default:
                 $table = ucfirst($do);
-                // dd($$table);
+                //  dd($$table);
                 $path = $$table->list();
 
                 include "$path";

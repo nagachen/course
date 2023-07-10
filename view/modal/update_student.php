@@ -9,7 +9,7 @@ header("location:?do=query_student");
 
 $sql="select * from `student` where `id`='{$_POST['id']}'";
 // $row=$pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
-$row=$student->find(["id"=>"{$_POST['id']}"]);
+$row=$Student->find(["id"=>"{$_POST['id']}"]);
 ?>
 
 

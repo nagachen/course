@@ -6,7 +6,7 @@
 <?php
 
 $sql = "select * from `class`";
-$rows = $class->all();
+$rows = $Subject->all();
 
 
 ?>
@@ -33,7 +33,7 @@ $rows = $class->all();
             <td><?= $row['subject_no'] ?></td>
             <td><?php
             
-                $name = $student->find(["id"=>"{$row['create_id']}"]);
+                $name = $Student->find(["id"=>"{$row['create_id']}"]);
                 
                 echo "$name[name]";
                 ?></td>
