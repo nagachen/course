@@ -22,7 +22,7 @@ include_once $BASEDIR . "/base.php";
     //需登入才可以用選單
     //沒有登入只能看一些無關緊要的資訊呈現
     // 登入後同時將進行身份驗證，使用session,並展現可以操作的相關資訊(一連串的驗證)
-
+    
     if (isset($_SESSION['login']) && isset($_SESSION['power'])) {
         switch ($_SESSION['power']) {
             case 'super':
@@ -37,7 +37,7 @@ include_once $BASEDIR . "/base.php";
             default:
                 break;
         }
-        $do  = $_GET['do'] ?? "list";
+        $do = $_GET['do'] ?? "list";
         switch ($do) {
             case 'add_student':
             case 'add_class':
@@ -48,7 +48,7 @@ include_once $BASEDIR . "/base.php";
                 include "./view/modal/" . $do . ".php";
                 break;
             case 'set_class':
-            case 'statis_class':            
+            case 'statis_class':
                 include "./view/" . $do . ".php";
                 break;
             case 'list':
@@ -65,8 +65,23 @@ include_once $BASEDIR . "/base.php";
         include "./front/login.php";
     }
     ?>
+    <div>
+        <h3>說明：</h3>
+        <pre>
+            帳號分別有三種身份可以使用
+            ID:admin  PW:admin
+            ID:chen   PW:chen
+            ID:john   PW:john
+            每個帳號都有不同的權限和選項
+
+</pre>
+    </div>
+
+    <div class="fixed-bottom">
 
 
+        <a href="https://nagachen.github.io"><button type="button" class="btn btn-info">回GIT頁面</button></a>
+    </div>
 
 </body>
 
